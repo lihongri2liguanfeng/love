@@ -1,0 +1,113 @@
+div{
+    padding: 0;
+    margin: 0;
+    /*清除ios默认的点击时产生的高亮区块   rgba(0,0,0,0)*/
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    /*定义盒子模型的宽度从边框计算*/
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-size: 14px;
+    font-family: Arial, "Microsoft Yahei";
+    color: #fff;
+}
+
+.scene-card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: 100;
+}
+
+.pano {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.occ-container {
+    width: 100%;
+}
+
+.occ-photo {
+    width: 100%;
+    text-align: center;
+    font-size: 0;
+    line-height: 0;
+}
+
+.occ-photo img {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.heart {
+    background: url(../img/web_heart_animation.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    height: 70px;
+    width: 70px;
+    cursor: pointer;
+    position: absolute;
+    text-align: center;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background-size: 2900%;
+}
+
+.heart:hover,
+.heart:focus {
+    background-position: right;
+}
+
+@-webkit-keyframes heartBlast {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+
+@keyframes heartBlast {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+
+.heartAnimation {
+    display: inline-block;
+    -webkit-animation-name: heartBlast;
+    animation-name: heartBlast;
+    -webkit-animation-duration: .8s;
+    animation-duration: .8s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-timing-function: steps(28);
+    animation-timing-function: steps(28);
+    background-position: right;
+}
